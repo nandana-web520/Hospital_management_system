@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+ {% block title%} Home {% endblock%}
+ 
+ {% block content %}
+     <h2>Departments</h2>
+     <hr>
+     <ul>
+         {% for dept in departments %}
+             <li>{{ dept.dep_name }}</li>
+             <p>{{ dept.dep_description }}</p>
+         {% endfor %}
+     </ul>
+ {% endblock %}
