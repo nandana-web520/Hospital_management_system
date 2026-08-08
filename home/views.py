@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Department, Doctors
+from .models import Booking, Department, Doctors
 
 def home(request):
     return render(request, 'home.html')
@@ -13,8 +13,11 @@ def doctor(request):
 
 def appointment(request):
     return render(request, 'appointment.html')
-def billing(request):
-    return render(request, 'billing.html')
+def booking(request):
+    booking_dic={
+        'bookings':Booking.objects.all()
+    }
+    return render(request, 'booking.html', booking_dic)
 def department(request):
     dep_dic={
         'departments':Department.objects.all()
